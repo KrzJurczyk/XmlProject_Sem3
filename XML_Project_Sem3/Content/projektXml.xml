@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<World xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Age="2018">
+  <Countries>
+    <Country Capital="Warsaw" OfficialLanguages="Polish" Name="Poland">
+      <Partitions>
+        <Partition Capital="Gdansk" Name="Pomeranian">
+          <Cities>
+            <City Name="Gdansk" Population="573971">
+              <Pubs>
+                <Pub>Bruder</Pub>
+                <Pub>Redlight</Pub>
+              </Pubs>
+            </City>
+            <City Name="Gdynia" Population="244458">
+              <Pubs>
+                <Pub>nieznam</Pub>
+              </Pubs>
+            </City>
+          </Cities>
+        </Partition>
+        <Partition Capital="Warsaw" Name="Masowia">
+          <Cities>
+            <City Name="Warsaw" Population="1745000">
+              <Pubs>
+                <Pub>nieznam</Pub>
+              </Pubs>
+            </City>
+          </Cities>
+        </Partition>
+      </Partitions>
+    </Country>
+  </Countries>
+</World>

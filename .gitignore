@@ -11,6 +11,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+!Content/
 
 # Build results
 [Dd]ebug/
@@ -286,7 +287,3 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-
-# Others
-.Content/
-*.xml
