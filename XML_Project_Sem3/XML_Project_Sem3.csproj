@@ -44,16 +44,20 @@
   <ItemGroup>
     <Compile Include="ClassToSerialize\CitySerializer.cs" />
     <Compile Include="ClassToSerialize\CountrySerializer.cs" />
-    <Compile Include="ClassToSerialize\CountryPartitionSerializer.cs" />
+    <Compile Include="ClassToSerialize\CountryDivisionSerializer.cs" />
     <Compile Include="ClassToSerialize\WorldSerializer.cs" />
-    <Compile Include="Creators\WorldXmlCreator.cs" />
-    <Compile Include="Model\DataProvider.cs" />
-    <Compile Include="Model\ModelInstance.cs" />
+    <Compile Include="Controllers\SyntaxController.cs" />
+    <Compile Include="Creators\XmlCreator.cs" />
+    <Compile Include="Controllers\DataProvider.cs" />
+    <Compile Include="Controllers\ModelInstance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Content\projektXml.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\projektXml.xml">

@@ -12,9 +12,9 @@ namespace XML_Project_Sem3.ClassToSerialize
         [XmlAttribute]
         public string Capital { get; set; }
 
-        [XmlArray("Partitions")]
-        [XmlArrayItem("Partition")]
-        public List<CountryPartitionSerializer> CountryPartitions { get; set; }
+        [XmlArray("Divisions")]
+        [XmlArrayItem("Division")]
+        public List<CountryDivisionSerializer> CountryDivision { get; set; }
 
         [XmlAttribute]
         public string OfficialLanguages { get; set; }

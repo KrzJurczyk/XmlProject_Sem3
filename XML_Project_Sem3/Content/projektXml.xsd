@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="World">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Countries">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="Country">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Divisions">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" name="Division">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="Cities">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element maxOccurs="unbounded" name="City">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="Pubs">
+                                              <xsd:complexType>
+                                                <xsd:sequence>
+                                                  <xsd:element maxOccurs="unbounded" name="Pub" type="xsd:string" />
+                                                </xsd:sequence>
+                                              </xsd:complexType>
+                                            </xsd:element>
+                                          </xsd:sequence>
+                                          <xsd:attribute name="Name" type="xsd:string" use="required" />
+                                          <xsd:attribute name="Population" type="xsd:unsignedInt" use="required" />
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="Capital" type="xsd:string" use="required" />
+                              <xsd:attribute name="Name" type="xsd:string" use="required" />
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="Capital" type="xsd:string" use="required" />
+                  <xsd:attribute name="OfficialLanguages" type="xsd:string" use="required" />
+                  <xsd:attribute name="Name" type="xsd:string" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="Age" type="xsd:unsignedShort" use="required" />
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>

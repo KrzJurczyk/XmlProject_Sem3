@@ -4,11 +4,12 @@ using XML_Project_Sem3.ClassToSerialize;
 
 namespace XML_Project_Sem3.Creators
 {
-    public class WorldXmlCreator
+    public class XmlCreator
     {
         #region Private Fields
 
         private WorldSerializer world = new WorldSerializer();
+        private const string border = "~~~~~~~~~~~~~~~~";
 
         #endregion
 
@@ -64,60 +65,60 @@ namespace XML_Project_Sem3.Creators
         {
             world.Countries = new List<CountrySerializer>();
 
+            string tabS = "\t";
             do
             {
-                var country = new CountrySerializer();
+                Console.WriteLine(border);
 
-                Console.Write("Write country name: ");
+                var country = new CountrySerializer();
+                Console.Write(tabS + "Write country name: ");
                 country.Name = Console.ReadLine();
 
-                Console.Write("Write capital name: ");
+                Console.Write(tabS + "Write capital name: ");
                 country.Capital = Console.ReadLine();
 
-                Console.Write("Write country official language: ");
+                Console.Write(tabS + "Write country official language: ");
                 country.OfficialLanguages = Console.ReadLine();
 
                 GetCountryPartition(country);
 
                 world.Countries.Add(country);
 
-                Console.WriteLine("Press space if you want add next country");
-
-            } while (Console.ReadKey().Key == ConsoleKey.Spacebar);
+            } while (Finish("country", tabS));
         }
 
         private void GetCountryPartition(CountrySerializer country)
         {
-            country.CountryPartitions = new List<CountryPartitionSerializer>();
+            country.CountryDivision = new List<CountryDivisionSerializer>();
 
+            string tabS = "\t\t";
             do
             {
-                var countryPartition = new CountryPartitionSerializer();
+                var countryPartition = new CountryDivisionSerializer();
 
-                Console.Write("Write country partition name: ");
+                Console.Write(tabS + "Write country partition name: ");
                 countryPartition.Name = Console.ReadLine();
 
-                Console.Write("Write capital name: ");
+                Console.Write(tabS + "Write capital name: ");
                 countryPartition.Capital = Console.ReadLine();
 
                 GetCities(countryPartition);
 
-                country.CountryPartitions.Add(countryPartition);
+                country.CountryDivision.Add(countryPartition);
 
-                Console.WriteLine("Press space if you want add next country partition");
-
-            } while (Console.ReadKey().Key == ConsoleKey.Spacebar);
+            } while (Finish("country division", tabS));
         }
 
-        private void GetCities(CountryPartitionSerializer countryPartition)
+        private void GetCities(CountryDivisionSerializer countryPartition)
         {
             countryPartition.Cities = new List<CitySerializer>();
 
+            string tabS = "\t\t\t";
             do
             {
                 var city = new CitySerializer();
 
-                Console.Write("Write city name: ");
+                Console.Write(tabS + "Write city name: ");
                 city.Name = Console.ReadLine();
 
                 GetCityPopulation(out int populVal);
@@ -127,21 +128,20 @@ namespace XML_Project_Sem3.Creators
 
                 countryPartition.Cities.Add(city);
 
-                Console.WriteLine("Press space if you want add next city");
-
-            } while (Console.ReadKey().Key == ConsoleKey.Spacebar);
+            } while (Finish("city", tabS));
         }
 
         private void GetCityPopulation(out int cityPopulValue)
         {
-            Console.Write("Write population: ");
+            string tabS = "\t\t\t";
+            Console.Write(tabS + "Write population: ");
             do
             {
                 if (int.TryParse(Console.ReadLine(), out cityPopulValue))
                     break;
 
-                Console.WriteLine("Write some intiger value..");
-                Console.WriteLine("Try again, write population:");
+                Console.WriteLine(tabS + "Write some intiger value..");
+                Console.WriteLine(tabS + "Try again, write population:");
 
             } while (true);
         }
@@ -150,14 +150,19 @@ namespace XML_Project_Sem3.Creators
         {
             city.Pubs = new List<string>();
 
+            string tabS = "\t\t\t\t";
             do
             {
-                Console.Write("Write pub name: ");
+                Console.Write(tabS + "Write pub name: ");
                 city.Pubs.Add(Console.ReadLine());
+                
+            } while (Finish("pub", tabS));
+        }
 
-                Console.WriteLine("Press space if you want add next pub");
-
-            } while (Console.ReadKey().Key == ConsoleKey.Spacebar);
+        private bool Finish(string itemToAdd, string tabV)
+        {
+            Console.WriteLine(tabV + "Press enter if you want to add next " + itemToAdd);
+            return Console.ReadKey().Key == ConsoleKey.Enter;
         }
 
         #endregion

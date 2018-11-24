@@ -1,4 +1,4 @@
-using XML_Project_Sem3.Model;
+using XML_Project_Sem3.Controller;
 
 namespace XML_Project_Sem3
 {
@@ -6,7 +6,7 @@ namespace XML_Project_Sem3
     {
         static void Main(string[] args)
         {
-            var start = new ModelInstance();
+            var start = new ControllerInstance();
             start.StartCreateXml();
         }
     }

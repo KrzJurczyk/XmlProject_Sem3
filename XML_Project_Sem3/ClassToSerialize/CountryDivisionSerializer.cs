@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 namespace XML_Project_Sem3.ClassToSerialize
 {
     [Serializable]
-    public class CountryPartitionSerializer
+    public class CountryDivisionSerializer
     {
         #region Public Properties
 

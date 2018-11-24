@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XML_Project_Sem3.Model
+namespace XML_Project_Sem3.Controller
 {
     public class DataProvider
     {
