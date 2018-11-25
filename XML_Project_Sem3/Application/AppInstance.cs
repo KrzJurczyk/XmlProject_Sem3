@@ -1,5 +1,5 @@
 ﻿using XML_Project_Sem3.Config;
-using XML_Project_Sem3.DataFillers;
+using XML_Project_Sem3.Model.Hellpers;
 
 namespace XML_Project_Sem3.Application
 {
@@ -8,7 +8,7 @@ namespace XML_Project_Sem3.Application
         #region Private Fields
 
         private static AppInstance instance;
-        private string defaultPathToSave;
+        private readonly ConfigProvider config = new ConfigProvider();
 
         #endregion
 
@@ -38,19 +38,21 @@ namespace XML_Project_Sem3.Application
 
         public void Start()
         {
-            GetConfig();
+            GetXmlFile();
+
+            //var start = new ModelCreator();
+            //start.StartCreateXml();
         }
 
         #endregion
 
         #region Private Methods
 
-        private void GetConfig()
+        private void GetXmlFile()
         {
-            var data = new DataProvider();
-            var fillData = new ConfigFiller(data.GetConfigFile).FillConfig();
-
-
+            var a = new WorldFiller(config.DefaultPath + config.DefaultFile);
+            a.Fill();
+            var v = a.Data;
         }
 
         #endregion

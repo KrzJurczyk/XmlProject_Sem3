@@ -9,8 +9,6 @@ namespace XML_Project_Sem3
         {
             var a = AppInstance.Instance;
             a.Start();
-            var start = new ModelCreator();
-            start.StartCreateXml();
         }
     }
 }

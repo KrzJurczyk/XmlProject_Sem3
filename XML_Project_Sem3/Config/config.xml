@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DefaultPath Path="C:\Users\KrisJ\Documents\Visual Studio 2017\Projects\XML_Project_Sem3\XML_Project_Sem3\Config\" FileName="config.xml"></DefaultPath>
+  <DefaultPath Path="C:\Users\KrisJ\Documents\Visual Studio 2017\Projects\XML_Project_Sem3\XML_Project_Sem3\Content\" FileName="projektXml.xml"></DefaultPath>
 </Config>

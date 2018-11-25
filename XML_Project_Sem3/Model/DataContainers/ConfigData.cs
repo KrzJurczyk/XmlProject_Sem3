@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Xml.Serialization;
+using XML_Project_Sem3.Interfaces;
 
-namespace XML_Project_Sem3.DataContainers
+namespace XML_Project_Sem3.Model.DataContainers
 {
     [Serializable]
     [XmlRoot(ElementName = "Config")]
-    public class ConfigData
+    public class ConfigData : IDataProvider
     {
         [XmlElement("DefaultPath")]
         public DefaultPathData DefaultPath = new DefaultPathData();

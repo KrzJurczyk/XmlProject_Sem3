@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Xml.Serialization;
+using XML_Project_Sem3.Interfaces;
 
-namespace XML_Project_Sem3.DataContainers
+namespace XML_Project_Sem3.Model.DataContainers
 {
     [Serializable]
-    public class DefaultPathData
+    public class DefaultPathData : IDataProvider
     {
         [XmlAttribute("Path")]
         public string Path { get; set; }

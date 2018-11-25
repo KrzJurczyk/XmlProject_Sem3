@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using XML_Project_Sem3.Interfaces;
 
-namespace XML_Project_Sem3.DataContainers
+namespace XML_Project_Sem3.Model.DataContainers
 {
     [Serializable]
-    public class CityData
+    public class CityData : IDataProvider
     {
         #region Public Properties
 

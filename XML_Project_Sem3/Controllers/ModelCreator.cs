@@ -1,14 +1,15 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 using XML_Project_Sem3.DataContainers;
+using XML_Project_Sem3.Model.DataContainers;
 
 namespace XML_Project_Sem3.Config
 {
-    public class ModelCreator
+    internal class ModelCreator
     {
         #region Privte Fields
 
-        private readonly DataProvider data = new DataProvider();
+        private readonly PathProvider data = new PathProvider();
 
         #endregion
 

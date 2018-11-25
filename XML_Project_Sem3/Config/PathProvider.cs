@@ -2,7 +2,7 @@
 
 namespace XML_Project_Sem3.Config
 {
-    public class DataProvider
+    public class PathProvider
     {
         #region Privte Fields
 
@@ -16,7 +16,7 @@ namespace XML_Project_Sem3.Config
 
         public string PathToDesctop => pathToDesctop;
         public string PathToProject => pathToProject;
-        public string GetConfigFile => pathToProject + configFile;
+        public string GetConfigPath => pathToProject + configFile;
 
         #endregion
     }
