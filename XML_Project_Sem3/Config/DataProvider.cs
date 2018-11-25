@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XML_Project_Sem3.Controller
+namespace XML_Project_Sem3.Config
 {
     public class DataProvider
     {
@@ -8,13 +8,15 @@ namespace XML_Project_Sem3.Controller
 
         private readonly string pathToDesctop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         private readonly string pathToProject = Environment.CurrentDirectory;
-        
+        private const string configFile = @"\Config\config.xml";
+
         #endregion
 
         #region Public Properties
 
         public string PathToDesctop => pathToDesctop;
         public string PathToProject => pathToProject;
+        public string GetConfigFile => pathToProject + configFile;
 
         #endregion
     }

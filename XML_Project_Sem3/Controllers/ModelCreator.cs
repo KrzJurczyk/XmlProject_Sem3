@@ -1,12 +1,10 @@
 ﻿using System.IO;
-using System.Xml.Schema;
 using System.Xml.Serialization;
-using XML_Project_Sem3.ClassToSerialize;
-using XML_Project_Sem3.Creators;
+using XML_Project_Sem3.DataContainers;
 
-namespace XML_Project_Sem3.Controller
+namespace XML_Project_Sem3.Config
 {
-    public class ControllerInstance
+    public class ModelCreator
     {
         #region Privte Fields
 
@@ -21,7 +19,7 @@ namespace XML_Project_Sem3.Controller
             var xmlCreator = new XmlCreator();
             xmlCreator.CreateWorld();
 
-            XmlSerializer x = new XmlSerializer(typeof(WorldSerializer));
+            XmlSerializer x = new XmlSerializer(typeof(WorldData));
             TextWriter writer = new StreamWriter(data.PathToProject + @"\projektXml.xml");
             x.Serialize(writer, xmlCreator.World);
         }

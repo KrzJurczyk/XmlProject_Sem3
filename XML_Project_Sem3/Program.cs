@@ -1,12 +1,15 @@
-using XML_Project_Sem3.Controller;
+using XML_Project_Sem3.Application;
+using XML_Project_Sem3.Config;
 
 namespace XML_Project_Sem3
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var start = new ControllerInstance();
+            var a = AppInstance.Instance;
+            a.Start();
+            var start = new ModelCreator();
             start.StartCreateXml();
         }
     }

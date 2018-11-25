@@ -42,24 +42,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassToSerialize\CitySerializer.cs" />
-    <Compile Include="ClassToSerialize\CountrySerializer.cs" />
-    <Compile Include="ClassToSerialize\CountryDivisionSerializer.cs" />
-    <Compile Include="ClassToSerialize\WorldSerializer.cs" />
-    <Compile Include="Controllers\SyntaxController.cs" />
-    <Compile Include="Creators\XmlCreator.cs" />
-    <Compile Include="Controllers\DataProvider.cs" />
-    <Compile Include="Controllers\ModelInstance.cs" />
+    <Compile Include="Application\AppInstance.cs" />
+    <Compile Include="DataContainers\CityData.cs" />
+    <Compile Include="DataContainers\DefaultPathData.cs" />
+    <Compile Include="DataContainers\CountryData.cs" />
+    <Compile Include="DataContainers\CountryDivisionData.cs" />
+    <Compile Include="DataContainers\WorldData.cs" />
+    <Compile Include="DataContainers\ConfigData.cs" />
+    <Compile Include="DataFillers\ConfigFiller.cs" />
+    <Compile Include="Misc\SyntaxSupport.cs" />
+    <Compile Include="Converter\XmlCreator.cs" />
+    <Compile Include="Config\DataProvider.cs" />
+    <Compile Include="Controllers\ModelCreator.cs" />
+    <Compile Include="Converter\XmlModify.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Config\config.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\projektXml.xsd">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\projektXml.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

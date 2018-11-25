@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace XML_Project_Sem3.ClassToSerialize
+namespace XML_Project_Sem3.DataContainers
 {
     [Serializable]
-    public class CitySerializer
+    public class CityData
     {
         #region Public Properties
 

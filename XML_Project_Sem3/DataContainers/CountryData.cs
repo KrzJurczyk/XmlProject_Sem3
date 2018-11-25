@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace XML_Project_Sem3.ClassToSerialize
+namespace XML_Project_Sem3.DataContainers
 {
     [Serializable]
-    public class CountryDivisionSerializer
+    public class CountryData
     {
         #region Public Properties
 
         [XmlAttribute]
         public string Capital { get; set; }
 
-        [XmlArray("Cities")]
-        [XmlArrayItem("City")]
-        public List<CitySerializer> Cities { get; set; }
+        [XmlArray("Divisions")]
+        [XmlArrayItem("Division")]
+        public List<CountryDivisionData> CountryDivision { get; set; }
+
+        [XmlAttribute]
+        public string OfficialLanguages { get; set; }
 
         [XmlAttribute]
         public string Name { get; set; }

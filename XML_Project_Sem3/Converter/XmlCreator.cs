@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using XML_Project_Sem3.ClassToSerialize;
+using XML_Project_Sem3.Config;
 
-namespace XML_Project_Sem3.Creators
+namespace XML_Project_Sem3.DataContainers
 {
     public class XmlCreator
     {
         #region Private Fields
 
-        private WorldSerializer world = new WorldSerializer();
+        private WorldData world = new WorldData();
+        private SyntaxController sc = new SyntaxController();
         private const string border = "~~~~~~~~~~~~~~~~";
 
         #endregion
 
         #region Public Properties
 
-        public WorldSerializer World => world;
+        public WorldData World => world;
 
         #endregion
 
@@ -63,22 +64,22 @@ namespace XML_Project_Sem3.Creators
 
         private void GetCountry()
         {
-            world.Countries = new List<CountrySerializer>();
+            world.Countries = new List<CountryData>();
 
             string tabS = "\t";
             do
             {
                 Console.WriteLine(border);
 
-                var country = new CountrySerializer();
+                var country = new CountryData();
                 Console.Write(tabS + "Write country name: ");
-                country.Name = Console.ReadLine();
+                country.Name = sc.UserInput();
 
                 Console.Write(tabS + "Write capital name: ");
-                country.Capital = Console.ReadLine();
+                country.Capital = sc.UserInput();
 
                 Console.Write(tabS + "Write country official language: ");
-                country.OfficialLanguages = Console.ReadLine();
+                country.OfficialLanguages = sc.UserInput();
 
                 GetCountryPartition(country);
 
@@ -87,20 +88,20 @@ namespace XML_Project_Sem3.Creators
             } while (Finish("country", tabS));
         }
 
-        private void GetCountryPartition(CountrySerializer country)
+        private void GetCountryPartition(CountryData country)
         {
-            country.CountryDivision = new List<CountryDivisionSerializer>();
+            country.CountryDivision = new List<CountryDivisionData>();
 
             string tabS = "\t\t";
             do
             {
-                var countryPartition = new CountryDivisionSerializer();
+                var countryPartition = new CountryDivisionData();
 
                 Console.Write(tabS + "Write country partition name: ");
-                countryPartition.Name = Console.ReadLine();
+                countryPartition.Name = sc.UserInput();
 
                 Console.Write(tabS + "Write capital name: ");
-                countryPartition.Capital = Console.ReadLine();
+                countryPartition.Capital = sc.UserInput();
 
                 GetCities(countryPartition);
 
@@ -109,17 +110,17 @@ namespace XML_Project_Sem3.Creators
             } while (Finish("country division", tabS));
         }
 
-        private void GetCities(CountryDivisionSerializer countryPartition)
+        private void GetCities(CountryDivisionData countryPartition)
         {
-            countryPartition.Cities = new List<CitySerializer>();
+            countryPartition.Cities = new List<CityData>();
 
             string tabS = "\t\t\t";
             do
             {
-                var city = new CitySerializer();
+                var city = new CityData();
 
                 Console.Write(tabS + "Write city name: ");
-                city.Name = Console.ReadLine();
+                city.Name = sc.UserInput();
 
                 GetCityPopulation(out int populVal);
                 city.Population = populVal;
@@ -146,7 +147,7 @@ namespace XML_Project_Sem3.Creators
             } while (true);
         }
 
-        private void GetPubs(CitySerializer city)
+        private void GetPubs(CityData city)
         {
             city.Pubs = new List<string>();
 
@@ -154,7 +155,7 @@ namespace XML_Project_Sem3.Creators
             do
             {
                 Console.Write(tabS + "Write pub name: ");
-                city.Pubs.Add(Console.ReadLine());
+                city.Pubs.Add(sc.UserInput());
                 
             } while (Finish("pub", tabS));
         }

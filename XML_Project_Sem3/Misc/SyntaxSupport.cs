@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
-namespace XML_Project_Sem3.Controllers
+namespace XML_Project_Sem3.Config
 {
     public sealed class SyntaxController
     {
@@ -16,17 +15,17 @@ namespace XML_Project_Sem3.Controllers
 
         #region Public Methods
 
-        public void Validate(ref string userInput)
+        public string UserInput()
         {
-            ReplaceNumber(ref userInput);
-            var data = Regex.Replace(userInput, "[^\\w\\._]", ""); ;
+            var rl = Console.ReadLine();
+            return ReplaceNumber(rl);
         }
 
         #endregion
 
         #region Private Metohds
 
-        private void ReplaceNumber(ref string stringToFIx)
+        private string ReplaceNumber(string stringToFIx)
         {
             var tmp = stringToFIx;
             string result = null;
@@ -34,15 +33,16 @@ namespace XML_Project_Sem3.Controllers
             {
                 if (int.TryParse(tmp[i].ToString(), out int c))
                 {
-                    result += tmp.Substring(i);
+                    result += tmp.Substring(i).ToUpper();
                     break;
                 }
 
                 int nc = c;
                 nTs.TryGetValue(nc, out string nas);
 
-                result += "n" + nas;
+                result += "num_" + nas;
             }
+            return result;
         }
 
         #endregion
