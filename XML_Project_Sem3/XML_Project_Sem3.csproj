@@ -47,21 +47,28 @@
       <DependentUpon>config.xsd</DependentUpon>
     </Compile>
     <Compile Include="Config\ConfigProvider.cs" />
+    <Compile Include="Controller\CreatorController.cs" />
+    <Compile Include="Controller\InstanceController.cs" />
+    <Compile Include="Controller\ModifyController.cs" />
+    <Compile Include="Interfaces\IUserData.cs" />
+    <Compile Include="Model\PathModel.cs" />
+    <Compile Include="Serializers\MyXmlDeserialize.cs" />
+    <Compile Include="Serializers\MyXmlSerialize.cs" />
+    <Compile Include="Application\UserInterface.cs" />
     <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="Interfaces\IFillerProvider.cs" />
-    <Compile Include="Misc\SyntaxSupport.cs" />
-    <Compile Include="Converter\XmlCreator.cs" />
+    <Compile Include="Model\CreatorModel.cs" />
     <Compile Include="Config\PathProvider.cs" />
-    <Compile Include="Controllers\ModelCreator.cs" />
-    <Compile Include="Converter\XmlModify.cs" />
-    <Compile Include="Model\DataContainers\CityData.cs" />
-    <Compile Include="Model\DataContainers\ConfigData.cs" />
-    <Compile Include="Model\DataContainers\CountryData.cs" />
-    <Compile Include="Model\DataContainers\CountryDivisionData.cs" />
-    <Compile Include="Model\DataContainers\DefaultPathData.cs" />
-    <Compile Include="Model\DataContainers\WorldData.cs" />
-    <Compile Include="Model\Fillers\ConfigFiller.cs" />
-    <Compile Include="Model\Fillers\WorldFiller.cs" />
+    <Compile Include="Serializers\ControllerCreator.cs" />
+    <Compile Include="Model\ModifyModel.cs" />
+    <Compile Include="Data\DataContainers\CityData.cs" />
+    <Compile Include="Data\DataContainers\ConfigData.cs" />
+    <Compile Include="Data\DataContainers\CountryData.cs" />
+    <Compile Include="Data\DataContainers\CountryDivisionData.cs" />
+    <Compile Include="Data\DataContainers\DefaultPathData.cs" />
+    <Compile Include="Data\DataContainers\WorldData.cs" />
+    <Compile Include="Data\Fillers\ConfigFiller.cs" />
+    <Compile Include="Data\Fillers\WorldFiller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

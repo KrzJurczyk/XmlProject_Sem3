@@ -1,4 +1,4 @@
-﻿using XML_Project_Sem3.Model.Hellpers;
+﻿using XML_Project_Sem3.Data.Hellpers;
 
 namespace XML_Project_Sem3.Config
 {

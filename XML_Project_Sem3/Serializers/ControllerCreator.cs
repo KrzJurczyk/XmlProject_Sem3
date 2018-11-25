@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
-using XML_Project_Sem3.DataContainers;
-using XML_Project_Sem3.Model.DataContainers;
+using XML_Project_Sem3.Controller;
+using XML_Project_Sem3.Data.DataContainers;
 
 namespace XML_Project_Sem3.Config
 {
@@ -17,12 +17,14 @@ namespace XML_Project_Sem3.Config
 
         public void StartCreateXml()
         {
-            var xmlCreator = new XmlCreator();
-            xmlCreator.CreateWorld();
+            var xmlCreator = new CreatorModel();
+            xmlCreator.Initialize();
 
             XmlSerializer x = new XmlSerializer(typeof(WorldData));
-            TextWriter writer = new StreamWriter(data.PathToProject + @"\projektXml.xml");
-            x.Serialize(writer, xmlCreator.World);
+            using (TextWriter writer = new StreamWriter(data.PathToProject + @"\projektXml.xml"))
+            {
+                x.Serialize(writer, xmlCreator.World);
+            }
         }
 
         #endregion

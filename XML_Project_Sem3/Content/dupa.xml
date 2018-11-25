@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<World xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Age="2018">
+  <Countries>
+    <Country Capital="wa" OfficialLanguages="pl" Name="pl">
+      <Divisions>
+        <Division Capital="gda" Name="pom">
+          <Cities>
+            <City Name="gda" Population="500">
+              <Pubs>
+                <Pub>bru</Pub>
+              </Pubs>
+            </City>
+          </Cities>
+        </Division>
+      </Divisions>
+    </Country>
+  </Countries>
+</World>

@@ -2,7 +2,7 @@
 
 namespace XML_Project_Sem3.Config
 {
-    public class PathProvider
+    internal class PathProvider
     {
         #region Privte Fields
 

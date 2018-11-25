@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using XML_Project_Sem3.Config;
-using XML_Project_Sem3.Model.DataContainers;
+using XML_Project_Sem3.Interfaces;
+using XML_Project_Sem3.Data.DataContainers;
 
-namespace XML_Project_Sem3.DataContainers
+namespace XML_Project_Sem3.Controller
 {
-    public class XmlCreator
+    internal class CreatorModel : IModel
     {
         #region Private Fields
 
         private WorldData world = new WorldData();
-        private SyntaxController sc = new SyntaxController();
         private const string border = "~~~~~~~~~~~~~~~~";
 
         #endregion
@@ -23,7 +23,7 @@ namespace XML_Project_Sem3.DataContainers
 
         #region Public Methods
 
-        public void CreateWorld()
+        public void Initialize()
         {
             Console.WriteLine("Hello, how u doin?");
             GetAge();
@@ -74,13 +74,13 @@ namespace XML_Project_Sem3.DataContainers
 
                 var country = new CountryData();
                 Console.Write(tabS + "Write country name: ");
-                country.Name = sc.UserInput();
+                country.Name = Console.ReadLine();
 
                 Console.Write(tabS + "Write capital name: ");
-                country.Capital = sc.UserInput();
+                country.Capital = Console.ReadLine();
 
                 Console.Write(tabS + "Write country official language: ");
-                country.OfficialLanguages = sc.UserInput();
+                country.OfficialLanguages = Console.ReadLine();
 
                 GetCountryPartition(country);
 
@@ -99,10 +99,10 @@ namespace XML_Project_Sem3.DataContainers
                 var countryPartition = new CountryDivisionData();
 
                 Console.Write(tabS + "Write country partition name: ");
-                countryPartition.Name = sc.UserInput();
+                countryPartition.Name = Console.ReadLine();
 
                 Console.Write(tabS + "Write capital name: ");
-                countryPartition.Capital = sc.UserInput();
+                countryPartition.Capital = Console.ReadLine();
 
                 GetCities(countryPartition);
 
@@ -121,7 +121,7 @@ namespace XML_Project_Sem3.DataContainers
                 var city = new CityData();
 
                 Console.Write(tabS + "Write city name: ");
-                city.Name = sc.UserInput();
+                city.Name = Console.ReadLine();
 
                 GetCityPopulation(out int populVal);
                 city.Population = populVal;
@@ -156,7 +156,7 @@ namespace XML_Project_Sem3.DataContainers
             do
             {
                 Console.Write(tabS + "Write pub name: ");
-                city.Pubs.Add(sc.UserInput());
+                city.Pubs.Add(Console.ReadLine());
                 
             } while (Finish("pub", tabS));
         }

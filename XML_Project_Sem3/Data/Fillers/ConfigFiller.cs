@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 using XML_Project_Sem3.Interfaces;
-using XML_Project_Sem3.Model.DataContainers;
+using XML_Project_Sem3.Data.DataContainers;
 
-namespace XML_Project_Sem3.Model.Hellpers
+namespace XML_Project_Sem3.Data.Hellpers
 {
     internal class ConfigFiller : IFillerProvider
     {
